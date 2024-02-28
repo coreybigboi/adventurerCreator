@@ -1,8 +1,8 @@
-export const enum Race{
-  Human,
-  HalfOrc,
-  Elf,
-  RockGoblin,
-  Tiefling,
-  Succubus,
+export enum Race{
+  Human = "human",
+  HalfOrc = "half-orc",
+  Elf = "elf",
+  RockGoblin = "rock-goblin",
+  Tiefling = "tiefling",
+  Succubus = "succubus",
 }
