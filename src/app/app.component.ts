@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {HomeComponent} from "./pages/home/home.component";
+import {CreateAdventurerComponent} from "./pages/create-adventurer/create-adventurer.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HomeComponent, CreateAdventurerComponent, RouterLink, MatToolbarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
