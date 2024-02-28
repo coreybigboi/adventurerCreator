@@ -3,12 +3,14 @@ import {ReactiveFormsModule, FormsModule, FormControl, FormGroup} from "@angular
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
-import {Race} from "../../shared/enums/race";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {provideNativeDateAdapter} from "@angular/material/core";
 
 @Component({
   selector: 'app-create-adventurer',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule, MatDatepicker, MatDatepickerInput, MatDatepickerToggle],
+  providers: [provideNativeDateAdapter()],
   templateUrl: './create-adventurer.component.html',
   styleUrl: './create-adventurer.component.css'
 })
