@@ -20,3 +20,9 @@ form{
   flex-wrap: wrap;
   gap: 100px
 }
+
+.form-submodule{
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}

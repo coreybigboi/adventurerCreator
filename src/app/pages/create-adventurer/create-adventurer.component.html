@@ -1,10 +1,13 @@
 <div class="create-page-container">
   <h1>Create Adventurer 🧙</h1>
-  <form>
+  <form [formGroup]="characterform">
     <div class="form-container">
       <span class="form-submodule">
         <h2>Character Details</h2>
-        <input type="text" [formControl]="nameControl">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="nameControl" placeholder="Type character's name here">
+        </mat-form-field>
       </span>
         <span class="form-submodule">
         <h2>Class and Alignment</h2>
@@ -16,6 +19,7 @@
         <h2>Background</h2>
       </span>
     </div>
-    <button type="submit">Create Character</button>
+    <button mat-raised-button color="accent" type="submit">Create Character</button>
   </form>
+  <p>Name: {{characterform.value.nameControl}}</p>
 </div>
