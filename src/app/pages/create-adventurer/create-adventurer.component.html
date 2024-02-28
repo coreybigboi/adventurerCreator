@@ -1,8 +1,21 @@
 <div class="create-page-container">
   <h1>Create Adventurer 🧙</h1>
-  <div class="form-container">
-    <form>
-      <input type="text" [formControl]="nameControl">
-    </form>
-  </div>
+  <form>
+    <div class="form-container">
+      <span class="form-submodule">
+        <h2>Character Details</h2>
+        <input type="text" [formControl]="nameControl">
+      </span>
+        <span class="form-submodule">
+        <h2>Class and Alignment</h2>
+      </span>
+        <span class="form-submodule">
+        <h2>Starting Equipment</h2>
+      </span>
+      <span class="form-submodule">
+        <h2>Background</h2>
+      </span>
+    </div>
+    <button type="submit">Create Character</button>
+  </form>
 </div>
