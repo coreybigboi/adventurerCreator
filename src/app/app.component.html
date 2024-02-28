@@ -1,9 +1,11 @@
 <header>
-  <h1>Adventurer Creator</h1>
-  <nav>
-    <a routerLink="">Home</a>
-    <a routerLink="/create">Create Adventurer</a>
-  </nav>
+  <mat-toolbar class="header" color="accent">
+    <h1>Adventurer Creator</h1>
+    <nav>
+      <a class="header-route" routerLink="">Home</a>
+      <a class="header-route" routerLink="/create">Create Adventurer</a>
+    </nav>
+  </mat-toolbar>
 </header>
 <main>
   <router-outlet></router-outlet>
