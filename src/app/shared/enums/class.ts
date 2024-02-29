@@ -1,8 +1,8 @@
 export const enum Class{
-  Fighter,
-  Rogue,
-  Warlock,
-  Barbarian,
-  Ranger,
-  Cleric,
+  Fighter = "fighter",
+  Rogue = "rogue",
+  Warlock = "warlock",
+  Barbarian = "barbarian",
+  Ranger = "ranger",
+  Cleric = "cleric",
 }
