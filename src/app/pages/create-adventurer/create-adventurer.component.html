@@ -77,8 +77,9 @@
     <button mat-raised-button color="primary" type="submit">Create Character</button>
   </form>
 
-  <p>Name: {{characterform.value.characterDetails?.nameControl}}</p>
-  <p>Race: {{characterform.value.characterDetails?.raceControl}}</p>
-  <p>DOB: {{characterform.value.characterDetails?.dobControl}}</p>
-  <p>Class: {{characterform.value.characterDetails?.classControl}}</p>
+  <br>
+  <h2>Form JSON Data</h2>
+  <pre>
+    {{characterform.value | json}}
+  </pre>
 </div>

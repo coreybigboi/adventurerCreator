@@ -7,6 +7,7 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {provideNativeDateAdapter} from "@angular/material/core";
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-create-adventurer',
@@ -22,6 +23,7 @@ import {provideNativeDateAdapter} from "@angular/material/core";
     MatDatepickerToggle, 
     MatRadioModule,
     MatCheckboxModule,
+    JsonPipe
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './create-adventurer.component.html',
