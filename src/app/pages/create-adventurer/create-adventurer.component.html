@@ -64,7 +64,7 @@
         </div>
         <mat-form-field>
           <mat-label>Starting Gold (gp)</mat-label>
-          <input type="number" matInput formControlName="goldPiecesControl" required>
+          <input type="number" matInput formControlName="goldPiecesControl" value="0" required>
         </mat-form-field>
       </div>
       <div class="form-submodule">
@@ -79,8 +79,8 @@
     <button mat-raised-button color="primary" type="submit">Create Character</button>
   </form>
 
-  <br>
-  <h2>Form JSON Data</h2>
+  <br><br><br><br>
+  <h2>Dynamic Form JSON Data</h2>
   <pre>
     {{characterform.value | json}}
   </pre>

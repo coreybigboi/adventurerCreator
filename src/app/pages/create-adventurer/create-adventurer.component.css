@@ -25,7 +25,7 @@ form{
 .form-submodule{
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 350px;
   width: 25%;
   gap: 10px;
 }
