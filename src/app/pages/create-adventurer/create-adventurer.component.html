@@ -52,13 +52,28 @@
           <mat-radio-button value="chaotic-evil">Chaotic Evil</mat-radio-button>
         </mat-radio-group>
       </div>
-      <div class="form-submodule">
+      <div formGroupName="equipment" class="form-submodule">
         <h2>Starting Equipment</h2>
+        <mat-checkbox color="primary" name="sword">Sword</mat-checkbox>
+        <mat-checkbox color="primary" name="shield">Shield</mat-checkbox>
+        <mat-checkbox color="primary" name="spear">Spear</mat-checkbox>
+        <mat-checkbox color="primary" name="longbow + 20 arrows">Longbow w/ 20 arrows</mat-checkbox>
+        <mat-checkbox color="primary" name="full-plate armour">Full-Plate Armour</mat-checkbox>
+        <mat-checkbox color="primary" name="trebuchet">Trebuchet</mat-checkbox>
+        <mat-form-field>
+          <mat-label>Starting Gold (gp)</mat-label>
+          <input type="number" matInput formControlName="goldPiecesControl" required>
+        </mat-form-field>
       </div>
       <div class="form-submodule">
         <h2>Background</h2>
+        <mat-form-field>
+          <mat-label>Backstory</mat-label>
+          <textarea matInput formControlName="backgroundControl" placeholder="Type character's backstory here" required></textarea>
+        </mat-form-field>
       </div>
     </div>
+    <mat-checkbox formControlName="agreesTermsControl" color="primary" name="agreesTerms">I agree to slay goblins, seek fortune, and save princesses.</mat-checkbox>
     <button mat-raised-button color="primary" type="submit">Create Character</button>
   </form>
 

@@ -3,7 +3,6 @@ form{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
 }
 
 .create-page-container{
@@ -19,13 +18,14 @@ form{
   flex-direction: row;
   flex-wrap: wrap;
   gap: 100px;
-  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .form-submodule{
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  min-width: 300px;
+  width: 25%
 }
 
 .radio-column{

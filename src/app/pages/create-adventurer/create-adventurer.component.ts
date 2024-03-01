@@ -4,13 +4,25 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
-import {MatRadioModule} from "@angular/material/radio"
+import {MatRadioModule} from "@angular/material/radio";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 import {provideNativeDateAdapter} from "@angular/material/core";
 
 @Component({
   selector: 'app-create-adventurer',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule, MatDatepicker, MatDatepickerInput, MatDatepickerToggle, MatRadioModule],
+  imports: [
+    ReactiveFormsModule, 
+    FormsModule, 
+    MatButtonModule, 
+    MatInputModule, 
+    MatSelectModule, 
+    MatDatepicker, 
+    MatDatepickerInput, 
+    MatDatepickerToggle, 
+    MatRadioModule,
+    MatCheckboxModule,
+  ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './create-adventurer.component.html',
   styleUrl: './create-adventurer.component.css'
