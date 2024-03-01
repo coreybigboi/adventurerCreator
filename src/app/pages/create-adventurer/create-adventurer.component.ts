@@ -17,11 +17,13 @@ import {provideNativeDateAdapter} from "@angular/material/core";
 export class CreateAdventurerComponent {
 
   characterform = new FormGroup({
-    nameControl: new FormControl(""),
+    characterDetails: new FormGroup({
+      nameControl: new FormControl(""),
+      raceControl: new FormControl(""),
+      dobControl: new FormControl(""),
+    }),
     classControl: new FormControl(""),
-    raceControl: new FormControl(""),
     alignmentControl: new FormControl(""),
-    dobControl: new FormControl(""),
     backgroundControl: new FormControl(""),
     equipmentControl: new FormControl(""),
     goldPiecesControl: new FormControl(""),
