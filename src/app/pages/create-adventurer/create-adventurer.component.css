@@ -18,11 +18,17 @@ form{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 100px
+  gap: 100px;
+  justify-content: center;
 }
 
 .form-submodule{
   display: flex;
   flex-direction: column;
   min-width: 250px;
+}
+
+.radio-column{
+  display: flex;
+  flex-direction: column;
 }

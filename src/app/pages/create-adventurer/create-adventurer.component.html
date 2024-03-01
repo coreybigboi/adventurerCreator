@@ -2,7 +2,7 @@
   <h1>Create Adventurer 🧙</h1>
   <form [formGroup]="characterform" (ngSubmit)="handleSubmit()">
     <div class="form-container">
-      <div formGroupName="char" class="form-submodule" >
+      <div formGroupName="characterDetails" class="form-submodule">
         <h2>Character Details</h2>
         <mat-form-field>
           <mat-label>Name</mat-label>
@@ -26,9 +26,31 @@
           <mat-datepicker #picker></mat-datepicker>
           <mat-hint>MM/DD/YYYY</mat-hint>
         </mat-form-field>
+        <br>
+        <label id="class-radio-label">Choose your class</label>
+        <mat-radio-group class="radio-column" aria-labelledby="class-radio-label" color="primary">
+          <mat-radio-button value="fighter">Fighter</mat-radio-button>
+          <mat-radio-button value="rogue">Rogue</mat-radio-button>
+          <mat-radio-button value="warlock">Warlock</mat-radio-button>
+          <mat-radio-button value="barbarian">Barbarian</mat-radio-button>
+          <mat-radio-button value="ranger">Ranger</mat-radio-button>
+          <mat-radio-button value="cleric">Cleric</mat-radio-button>
+        </mat-radio-group>
       </div>
       <div class="form-submodule">
-        <h2>Class and Alignment</h2>
+        <h2>Alignment</h2>
+        <label id="alignment-radio-label">Choose your alignment</label>
+        <mat-radio-group class="radio-column" aria-labelledby="alignment-radio-label" color="primary">
+          <mat-radio-button value="lawful-good">Lawful Good</mat-radio-button>
+          <mat-radio-button value="neutral-good">Neutral Good</mat-radio-button>
+          <mat-radio-button value="chaotic-good">Chaotic Good</mat-radio-button>
+          <mat-radio-button value="lawful-neutral">Lawful Neutral</mat-radio-button>
+          <mat-radio-button value="true-neutral">True Neutral</mat-radio-button>
+          <mat-radio-button value="chaotic-neutral">Chaotic Neutral</mat-radio-button>
+          <mat-radio-button value="lawful-evil">Lawful Evil</mat-radio-button>
+          <mat-radio-button value="neutral-evil">Neutral Evil</mat-radio-button>
+          <mat-radio-button value="chaotic-evil">Chaotic Evil</mat-radio-button>
+        </mat-radio-group>
       </div>
       <div class="form-submodule">
         <h2>Starting Equipment</h2>
@@ -37,10 +59,11 @@
         <h2>Background</h2>
       </div>
     </div>
-    <button mat-raised-button color="accent" type="submit">Create Character</button>
+    <button mat-raised-button color="primary" type="submit">Create Character</button>
   </form>
-  
-  <p>Name: {{characterform.value.characterDetails.nameControl ?? ""}}</p>
-  <p>Race: {{characterform.value.characterDetails.raceControl ?? ""}}</p>
-  <p>DOB: {{characterform.value.characterDetails.dobControl ?? ""}}</p>
+
+  <p>Name: {{characterform.value.characterDetails?.nameControl}}</p>
+  <p>Race: {{characterform.value.characterDetails?.raceControl}}</p>
+  <p>DOB: {{characterform.value.characterDetails?.dobControl}}</p>
+  <p>Class: {{characterform.value.characterDetails?.classControl}}</p>
 </div>
