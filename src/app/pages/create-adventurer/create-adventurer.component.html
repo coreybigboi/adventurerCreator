@@ -52,6 +52,13 @@
           <mat-radio-button value="chaotic-evil">Chaotic Evil</mat-radio-button>
         </mat-radio-group>
       </div>
+      <div class="form-submodule">
+        <h2>Background</h2>
+        <mat-form-field>
+          <mat-label>Backstory</mat-label>
+          <textarea matInput formControlName="backgroundControl" placeholder="Type character's backstory here" required></textarea>
+        </mat-form-field>
+      </div>
       <div formGroupName="equipment" class="form-submodule">
         <h2>Starting Equipment</h2>
         <mat-form-field>
@@ -66,13 +73,6 @@
           </mat-form-field>
           <button mat-raised-button color="warn" (click)="removeEquipment(i)">Remove</button>
         </div>
-      </div>
-      <div class="form-submodule">
-        <h2>Background</h2>
-        <mat-form-field>
-          <mat-label>Backstory</mat-label>
-          <textarea matInput formControlName="backgroundControl" placeholder="Type character's backstory here" required></textarea>
-        </mat-form-field>
       </div>
     </div>
     <mat-checkbox formControlName="agreesTermsControl" color="primary" name="agreesTerms">I agree to slay goblins, seek fortune, and save princesses.</mat-checkbox>
