@@ -28,7 +28,7 @@
         </mat-form-field>
         <br>
         <label id="class-radio-label">Choose your class</label>
-        <mat-radio-group class="radio-column" aria-labelledby="class-radio-label" color="primary">
+        <mat-radio-group class="radio-column" aria-labelledby="class-radio-label" color="primary" formControlName="classControl">
           <mat-radio-button value="fighter">Fighter</mat-radio-button>
           <mat-radio-button value="rogue">Rogue</mat-radio-button>
           <mat-radio-button value="warlock">Warlock</mat-radio-button>
@@ -40,7 +40,7 @@
       <div class="form-submodule">
         <h2>Alignment</h2>
         <label id="alignment-radio-label">Choose your alignment</label>
-        <mat-radio-group class="radio-column" aria-labelledby="alignment-radio-label" color="primary">
+        <mat-radio-group class="radio-column" aria-labelledby="alignment-radio-label" color="primary" formControlName="alignmentControl">
           <mat-radio-button value="lawful-good">Lawful Good</mat-radio-button>
           <mat-radio-button value="neutral-good">Neutral Good</mat-radio-button>
           <mat-radio-button value="chaotic-good">Chaotic Good</mat-radio-button>

@@ -47,7 +47,7 @@ export class CreateAdventurerComponent {
       goldPiecesControl: [''],
     }),
     backgroundControl: [''],
-    agreesTermsControl: [''],
+    agreesTermsControl: [false],
   });
 
   get equipmentControls() {
