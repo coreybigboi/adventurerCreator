@@ -54,6 +54,10 @@
       </div>
       <div formGroupName="equipment" class="form-submodule">
         <h2>Starting Equipment</h2>
+        <mat-form-field>
+          <mat-label>Starting Gold (gp)</mat-label>
+          <input type="number" matInput formControlName="goldPiecesControl" value="0" required>
+        </mat-form-field>
         <button mat-raised-button (click)="addEquipment()">+ Add Equipment</button>
         <div formArrayName="equipmentControls" *ngFor="let equipment of equipmentControls.controls; let i=index" >
           <mat-form-field>
@@ -62,10 +66,6 @@
           </mat-form-field>
           <button mat-raised-button color="warn" (click)="removeEquipment(i)">Remove</button>
         </div>
-        <mat-form-field>
-          <mat-label>Starting Gold (gp)</mat-label>
-          <input type="number" matInput formControlName="goldPiecesControl" value="0" required>
-        </mat-form-field>
       </div>
       <div class="form-submodule">
         <h2>Background</h2>
