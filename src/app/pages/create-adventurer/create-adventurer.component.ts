@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {ReactiveFormsModule, FormsModule, FormArray, FormBuilder, Validator, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormArray, FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
@@ -7,8 +7,11 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {provideNativeDateAdapter} from "@angular/material/core";
-import { JsonPipe } from '@angular/common';
-import { NgFor } from '@angular/common';
+import {JsonPipe, NgFor} from '@angular/common';
+import {Adventurer} from "../../shared/models/adventurer";
+import {Class} from "../../shared/enums/class";
+import {Race} from "../../shared/enums/race";
+import {Alignment} from "../../shared/enums/alignment";
 
 
 @Component({
@@ -65,6 +68,17 @@ export class CreateAdventurerComponent {
   }
 
   handleSubmit(): void{
-
+    if(!this.characterform.valid) return;
+    let character: Adventurer = {
+      name: this.characterform.value.characterDetails?.nameControl ?? "",
+      class: this.characterform.value.characterDetails?.classControl as Class ?? Class.Fighter,
+      race: this.characterform.value.characterDetails?.raceControl as Race ?? Race.Human,
+      alignment: this.characterform.value.alignmentControl as Alignment ?? Alignment.TrueNeutral,
+      dob: this.characterform.value.characterDetails?.dobControl as string ?? Date.now(),
+      background: this.characterform.value.backgroundControl ?? "",
+      equipment: this.characterform.value.equipment?.equipmentControls as string[] ?? [],
+      goldPieces: parseInt(this.characterform.value.equipment?.goldPiecesControl as string) ?? 0,
+      agreesTerms: this.characterform.value.agreesTermsControl ?? false
+    }
   }
 }
