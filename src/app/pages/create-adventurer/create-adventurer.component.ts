@@ -41,13 +41,13 @@ export class CreateAdventurerComponent {
     characterDetails: this.formBuilder.group({
       nameControl: ['', Validators.required],
       raceControl: ['', Validators.required],
-      dobControl:  ['', Validators.required],
+      dobControl:  [Date.now, Validators.required],
       classControl:['', Validators.required],
     }),
     alignmentControl: [''],
     equipment: this.formBuilder.group({
       equipmentControls: this.formBuilder.array([]),
-      goldPiecesControl: ['', Validators.required],
+      goldPiecesControl: [0, Validators.required],
     }),
     backgroundControl: ['', Validators.required],
     agreesTermsControl: [false, Validators.requiredTrue],
@@ -74,10 +74,10 @@ export class CreateAdventurerComponent {
       class: this.characterform.value.characterDetails?.classControl as Class ?? Class.Fighter,
       race: this.characterform.value.characterDetails?.raceControl as Race ?? Race.Human,
       alignment: this.characterform.value.alignmentControl as Alignment ?? Alignment.TrueNeutral,
-      dob: this.characterform.value.characterDetails?.dobControl as string ?? Date.now(),
+      dob: this.characterform.value.characterDetails?.dobControl?.toString() ?? Date.now().toString(),
       background: this.characterform.value.backgroundControl ?? "",
       equipment: this.characterform.value.equipment?.equipmentControls as string[] ?? [],
-      goldPieces: parseInt(this.characterform.value.equipment?.goldPiecesControl as string) ?? 0,
+      goldPieces: this.characterform.value.equipment?.goldPiecesControl ?? 0,
       agreesTerms: this.characterform.value.agreesTermsControl ?? false
     }
   }
