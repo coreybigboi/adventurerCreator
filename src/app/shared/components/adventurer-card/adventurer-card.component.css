@@ -1,0 +1,14 @@
+.adventurer-card{
+  padding: 20px;
+  border: 2px black solid;
+  border-radius: 10px;
+  background: lightgrey;
+}
+
+p{
+  text-align: left;
+}
+
+b{
+  text-align: left;
+}

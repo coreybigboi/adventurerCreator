@@ -1,0 +1,13 @@
+<div class="adventurer-card">
+  <p><b>Name:</b> {{adventurer.name}}</p>
+  <p><b>Class:</b> {{adventurer.class}}</p>
+  <p><b>Race:</b> {{adventurer.race}}</p>
+  <p><b>DOB:</b> {{adventurer.dob}}</p>
+  <p><b>Alignment:</b> {{adventurer.alignment}}</p>
+  <p><b>Background:</b> {{adventurer.background}}</p>
+  <b>Equipment:</b>
+  <ul>
+    <li>{{adventurer.goldPieces}} gold pieces</li>
+    <li *ngFor="let equipment of adventurer.equipment">{{equipment}}</li>
+  </ul>
+</div>
