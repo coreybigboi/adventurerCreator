@@ -4,3 +4,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h1{text-align: center}
 p{text-align: center}
+a {
+  color: rebeccapurple;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: darkblue;
+}

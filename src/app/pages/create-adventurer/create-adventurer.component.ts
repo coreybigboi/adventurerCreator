@@ -13,6 +13,7 @@ import {Race} from "../../shared/enums/race";
 import {Alignment} from "../../shared/enums/alignment";
 import {AdventurerService} from "../../shared/services/adventurer.service";
 import {Router} from "@angular/router";
+import {Gender} from "../../shared/enums/gender";
 
 
 @Component({
@@ -39,12 +40,13 @@ export class CreateAdventurerComponent {
   classes: string[];
   races: string[];
   alignments: string[];
+  genders: string[];
 
   characterform = this.formBuilder.group({
     characterDetails: this.formBuilder.group({
       nameControl: ['', Validators.required],
       raceControl: ['', Validators.required],
-      dobControl:  [Date.now, Validators.required],
+      genderControl:  ['', Validators.required],
       classControl:['', Validators.required],
     }),
     alignmentControl: [''],
@@ -64,6 +66,7 @@ export class CreateAdventurerComponent {
     this.classes = Object.values(CharacterClass);
     this.races = Object.values(Race);
     this.alignments = Object.values(Alignment);
+    this.genders = Object.values(Gender);
   }
 
   addEquipment(){
@@ -80,6 +83,7 @@ export class CreateAdventurerComponent {
       name: this.characterform.value.characterDetails?.nameControl ?? "",
       class: this.characterform.value.characterDetails?.classControl as CharacterClass ?? CharacterClass.Fighter,
       race: this.characterform.value.characterDetails?.raceControl as Race ?? Race.Human,
+      gender: this.characterform.value.characterDetails?.genderControl as Gender ?? Gender.NonSpecified,
       alignment: this.characterform.value.alignmentControl as Alignment ?? Alignment.TrueNeutral,
       background: this.characterform.value.backgroundControl ?? "",
       equipment: this.characterform.value.equipment?.equipmentControls as string[] ?? [],
