@@ -12,6 +12,8 @@ import {Adventurer} from "../../shared/models/adventurer";
 import {Class} from "../../shared/enums/class";
 import {Race} from "../../shared/enums/race";
 import {Alignment} from "../../shared/enums/alignment";
+import {AdventurerService} from "../../shared/services/adventurer.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -29,7 +31,7 @@ import {Alignment} from "../../shared/enums/alignment";
     MatRadioModule,
     MatCheckboxModule,
     JsonPipe,
-    NgFor
+    NgFor,
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './create-adventurer.component.html',
@@ -57,7 +59,7 @@ export class CreateAdventurerComponent {
     return this.characterform.get('equipment.equipmentControls') as FormArray;
   }
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder, private adventurerService: AdventurerService, private router: Router){}
 
   addEquipment(){
     this.equipmentControls.push(this.formBuilder.control('', Validators.required));
@@ -80,5 +82,7 @@ export class CreateAdventurerComponent {
       goldPieces: this.characterform.value.equipment?.goldPiecesControl ?? 0,
       agreesTerms: this.characterform.value.agreesTermsControl ?? false
     }
+    this.adventurerService.setAdventurer(character);
+    this.router.navigate(['/details']);
   }
 }
