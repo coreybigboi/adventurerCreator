@@ -1,8 +1,11 @@
 export enum Race{
-  Human = "Human",
-  HalfOrc = "Half-Orc",
+  Dwarf = "Dwarf",
+  Dragonborn = "Dragonborn",
   Elf = "Elf",
-  RockGoblin = "Rock-Goblin",
-  Tiefling = "Tiefling",
-  Succubus = "Succubus",
+  Gnome = "Gnome",
+  Halfling = "Halfling",
+  HalfElf = "Half-Elf",
+  HalfOrc = "Half-Orc",
+  Human = "Human",
+  Tiefling = "Tiefling"
 }

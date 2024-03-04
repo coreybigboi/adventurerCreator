@@ -1,8 +1,14 @@
 export enum CharacterClass{
-  Fighter = "Fighter",
-  Rogue = "Rogue",
-  Warlock = "Warlock",
-  Barbarian = "Barbarian",
-  Ranger = "Ranger",
+  Bararian = "Barbarian",
+  Bard = "Bard",
   Cleric = "Cleric",
+  Druid = "Druid",
+  Fighter = "Fighter",
+  Monk = "Monk",
+  Paladin = "Paladin",
+  Ranger = "Ranger",
+  Rogue = "Rogue",
+  Sorcerer = "Sorcerer",
+  Warlock = "Warlock",
+  Wizard = "Wizard"
 }

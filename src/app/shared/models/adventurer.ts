@@ -7,7 +7,6 @@ export interface Adventurer{
   class: CharacterClass,
   race: Race,
   alignment: Alignment,
-  dob: string,
   background: string,
   equipment: string[],
   goldPieces: number,

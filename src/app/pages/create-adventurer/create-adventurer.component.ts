@@ -3,7 +3,6 @@ import {FormArray, FormBuilder, FormsModule, ReactiveFormsModule, Validators} fr
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
-import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {provideNativeDateAdapter} from "@angular/material/core";
@@ -25,9 +24,6 @@ import {Router} from "@angular/router";
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
-    MatDatepicker,
-    MatDatepickerInput,
-    MatDatepickerToggle,
     MatRadioModule,
     MatCheckboxModule,
     JsonPipe,
@@ -85,7 +81,6 @@ export class CreateAdventurerComponent {
       class: this.characterform.value.characterDetails?.classControl as CharacterClass ?? CharacterClass.Fighter,
       race: this.characterform.value.characterDetails?.raceControl as Race ?? Race.Human,
       alignment: this.characterform.value.alignmentControl as Alignment ?? Alignment.TrueNeutral,
-      dob: this.characterform.value.characterDetails?.dobControl?.toString() ?? Date.now().toString(),
       background: this.characterform.value.backgroundControl ?? "",
       equipment: this.characterform.value.equipment?.equipmentControls as string[] ?? [],
       goldPieces: this.characterform.value.equipment?.goldPiecesControl ?? 0,
