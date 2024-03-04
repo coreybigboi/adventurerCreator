@@ -9,7 +9,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {provideNativeDateAdapter} from "@angular/material/core";
 import {JsonPipe, NgFor} from '@angular/common';
 import {Adventurer} from "../../shared/models/adventurer";
-import {Class} from "../../shared/enums/class";
+import {CharacterClass} from "../../shared/enums/characterClass";
 import {Race} from "../../shared/enums/race";
 import {Alignment} from "../../shared/enums/alignment";
 import {AdventurerService} from "../../shared/services/adventurer.service";
@@ -39,6 +39,11 @@ import {Router} from "@angular/router";
 })
 export class CreateAdventurerComponent {
 
+  // stores enum values
+  classes: string[];
+  races: string[];
+  alignments: string[];
+
   characterform = this.formBuilder.group({
     characterDetails: this.formBuilder.group({
       nameControl: ['', Validators.required],
@@ -59,7 +64,11 @@ export class CreateAdventurerComponent {
     return this.characterform.get('equipment.equipmentControls') as FormArray;
   }
 
-  constructor(private formBuilder: FormBuilder, private adventurerService: AdventurerService, private router: Router){}
+  constructor(private formBuilder: FormBuilder, private adventurerService: AdventurerService, private router: Router){
+    this.classes = Object.values(CharacterClass);
+    this.races = Object.values(Race);
+    this.alignments = Object.values(Alignment);
+  }
 
   addEquipment(){
     this.equipmentControls.push(this.formBuilder.control('', Validators.required));
@@ -73,7 +82,7 @@ export class CreateAdventurerComponent {
     if(!this.characterform.valid) return;
     let character: Adventurer = {
       name: this.characterform.value.characterDetails?.nameControl ?? "",
-      class: this.characterform.value.characterDetails?.classControl as Class ?? Class.Fighter,
+      class: this.characterform.value.characterDetails?.classControl as CharacterClass ?? CharacterClass.Fighter,
       race: this.characterform.value.characterDetails?.raceControl as Race ?? Race.Human,
       alignment: this.characterform.value.alignmentControl as Alignment ?? Alignment.TrueNeutral,
       dob: this.characterform.value.characterDetails?.dobControl?.toString() ?? Date.now().toString(),

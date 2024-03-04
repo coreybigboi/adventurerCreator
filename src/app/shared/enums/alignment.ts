@@ -1,11 +1,11 @@
-export const enum Alignment{
-  LawfulGood = "lawful-good",
-  NeutralGood = "neutral-good",
-  ChaoticGood = "chaotic-good",
-  LawfulNeutral = "lawful-neutral",
-  TrueNeutral = "true-neutral",
-  ChaoticNeutral = "chaotic-neutral",
-  LawfulEvil = "lawful-evil",
-  NeutralEvil = "neutral-evil",
-  ChaoticEvil = "chaotic-evil"
+export enum Alignment{
+  LawfulGood = "Lawful Good",
+  NeutralGood = "Neutral Good",
+  ChaoticGood = "Chaotic Good",
+  LawfulNeutral = "Lawful Neutral",
+  TrueNeutral = "True Neutral",
+  ChaoticNeutral = "Chaotic Neutral",
+  LawfulEvil = "Lawful Evil",
+  NeutralEvil = "Neutral Evil",
+  ChaoticEvil = "Chaotic Evil"
 }

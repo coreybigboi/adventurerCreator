@@ -11,12 +11,7 @@
         <mat-form-field>
           <mat-label>Race</mat-label>
           <mat-select formControlName="raceControl" required>
-            <mat-option value="human">Human</mat-option>
-            <mat-option value="half-orc">Half Orc</mat-option>
-            <mat-option value="elf">Elf</mat-option>
-            <mat-option value="rock-goblin">Rock Goblin</mat-option>
-            <mat-option value="tiefling">Tiefling</mat-option>
-            <mat-option value="succubus">Succubus</mat-option>
+            <mat-option *ngFor="let race of races" [value]="race">{{race}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -29,27 +24,14 @@
         <br>
         <label id="class-radio-label">Choose your class</label>
         <mat-radio-group class="radio-column" aria-labelledby="class-radio-label" color="primary" formControlName="classControl">
-          <mat-radio-button value="fighter">Fighter</mat-radio-button>
-          <mat-radio-button value="rogue">Rogue</mat-radio-button>
-          <mat-radio-button value="warlock">Warlock</mat-radio-button>
-          <mat-radio-button value="barbarian">Barbarian</mat-radio-button>
-          <mat-radio-button value="ranger">Ranger</mat-radio-button>
-          <mat-radio-button value="cleric">Cleric</mat-radio-button>
+          <mat-radio-button *ngFor="let c of classes" [value]="c">{{c}}</mat-radio-button>
         </mat-radio-group>
       </div>
       <div class="form-submodule">
         <h2>Alignment</h2>
         <label id="alignment-radio-label">Choose your alignment</label>
         <mat-radio-group class="radio-column" aria-labelledby="alignment-radio-label" color="primary" formControlName="alignmentControl">
-          <mat-radio-button value="lawful-good">Lawful Good</mat-radio-button>
-          <mat-radio-button value="neutral-good">Neutral Good</mat-radio-button>
-          <mat-radio-button value="chaotic-good">Chaotic Good</mat-radio-button>
-          <mat-radio-button value="lawful-neutral">Lawful Neutral</mat-radio-button>
-          <mat-radio-button value="true-neutral">True Neutral</mat-radio-button>
-          <mat-radio-button value="chaotic-neutral">Chaotic Neutral</mat-radio-button>
-          <mat-radio-button value="lawful-evil">Lawful Evil</mat-radio-button>
-          <mat-radio-button value="neutral-evil">Neutral Evil</mat-radio-button>
-          <mat-radio-button value="chaotic-evil">Chaotic Evil</mat-radio-button>
+          <mat-radio-button *ngFor="let alignment of alignments" [value]="alignment">{{alignment}}</mat-radio-button>
         </mat-radio-group>
       </div>
       <div class="form-submodule">
@@ -78,10 +60,4 @@
     <mat-checkbox formControlName="agreesTermsControl" color="primary" name="agreesTerms">I agree to slay goblins, seek fortune, and save princesses.</mat-checkbox>
     <button mat-raised-button color="primary" type="submit" [disabled]="!characterform.valid">Create Character</button>
   </form>
-
-  <br><br><br><br>
-  <h2>Dynamic Form JSON Data</h2>
-  <pre>
-    {{characterform.value | json}}
-  </pre>
 </div>

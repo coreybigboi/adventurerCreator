@@ -1,10 +1,10 @@
-import {Class} from "../enums/class";
+import {CharacterClass} from "../enums/characterClass";
 import {Race} from "../enums/race";
 import {Alignment} from "../enums/alignment";
 
 export interface Adventurer{
   name: string,
-  class: Class,
+  class: CharacterClass,
   race: Race,
   alignment: Alignment,
   dob: string,
