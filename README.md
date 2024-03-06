@@ -1,10 +1,9 @@
 # AdventurerCreator
 
 ## Greetings Adventurer!
-You can check out a demo of the site [here](https://coreybigboi.github.io/adventurerCreator/)
-This project was created as a learning exercise for Angular's [reactive forms](https://angular.io/guide/reactive-forms).
+You can check out a demo of the site [here](https://coreybigboi.github.io/adventurerCreator/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+This project was created as a learning exercise for Angular's [reactive forms](https://angular.io/guide/reactive-forms) and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
 ## Development server
 
